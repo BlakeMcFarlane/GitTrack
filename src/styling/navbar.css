@@ -1,0 +1,9 @@
+.nav-container {
+    background-color: rgb(85, 85, 85);
+    height: 15vh;
+}
+
+.nav-bar h5{
+    color: rgb(121, 121, 121);
+    text-align: center;
+}
