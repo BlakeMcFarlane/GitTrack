@@ -1,0 +1,33 @@
+.nav-container {
+    background-color: #24292e;
+    height: 15vh;
+    display: flex;
+    justify-content: center;
+}
+
+.nav-items {
+    width:80%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.search-user {
+    position: 0;
+}
+
+.nav-input {
+    position: right;
+    width: 350px;
+    height:30px;
+    background-color: #3a3f44;
+    border: none;
+    border-radius: 10px;
+    font-size: 15pt;
+    padding-left: 20px;
+    color: #151618
+}
+
+.nav-input:focus {
+    outline: 1px solid #2dba4e;
+}

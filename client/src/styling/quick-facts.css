@@ -1,0 +1,30 @@
+.facts-container {
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+    width:650px;
+}
+
+.fact-box {
+    background-color: #24292e;
+    height: 100%;
+    width:22%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 15px 15px 15px 15px;
+    font-family: 'Bebas Neue', sans-serif;
+}
+
+.fact-box h1{
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 36pt;
+    color: #fafbfc
+}
+
+.fact-box p{
+    color:#2dba4e;
+    font-size: 9pt;
+    margin-top: -10px;
+}

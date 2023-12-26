@@ -1,0 +1,50 @@
+.language-container {
+    background-color: #24292e;
+    height: 400px;
+    width: 700px;
+}
+.languages {
+    display: flex;
+    height: 85%;
+}
+.language-list {
+    width:50%;
+}
+.language-focus {
+    width: 50%;
+    display: flex;
+    align-items: center;
+}
+.focus {
+    background-color: rgb(105, 105, 105);
+    width: 90%;
+    height:80%;
+}
+.label {
+    margin-left: 10px;
+    font-family: 'Bebas Neue', sans-serif;
+}
+.list{
+    margin-top: 10px;
+    margin-left: 40px;
+}
+.language-bar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.bar{
+    width:90%;
+    height:8px;
+    background-color: aqua;
+}
+
+.language {
+    color:#fafbfc;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 16pt;
+}
+
+.language li {
+    padding-bottom: 2px;
+}
