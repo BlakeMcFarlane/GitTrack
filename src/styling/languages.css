@@ -1,0 +1,39 @@
+.language-container {
+    background-color: rgb(167, 167, 167);
+    height: 400px;
+    width: 700px;
+}
+.languages {
+    display: flex;
+    height: 85%;
+}
+.language-list {
+    width:50%;
+}
+.language-focus {
+    width: 50%;
+    display: flex;
+    align-items: center;
+}
+.focus {
+    background-color: rgb(105, 105, 105);
+    width: 90%;
+    height:80%;
+}
+.label {
+    margin-left: 10px;
+}
+.list{
+    margin-top: 10px;
+    margin-left: 20px;
+}
+.language-bar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.bar{
+    width:90%;
+    height:8px;
+    background-color: aqua;
+}

@@ -1,0 +1,10 @@
+.badges-container {
+    width: 500px;
+    height:50px;
+    margin-top: 15px;
+}
+
+.label {
+    color:rgb(39, 39, 39);
+    font-size: 12pt;
+}
