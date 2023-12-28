@@ -10,7 +10,7 @@ const Navbar = ({ onSearch }) => {
   };
 
   const handleSubmit = (event) => {
-    event.preventDefault(); // Prevents the default form submission behavior
+    event.preventDefault(); 
     onSearch(inputText);
     console.log("submit")
   };

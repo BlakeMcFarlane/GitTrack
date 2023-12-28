@@ -4,6 +4,7 @@ import QuickFacts from '../components/QuickFacts'
 import Badges from '../components/Badges'
 import Languages from '../components/Languages'
 import Leaderboard from '../components/Leaderboard'
+import Navbar from '../components/Navbar'
 import '../styling/home-page.css'
 
 
@@ -53,7 +54,7 @@ const HomePage = ({ userData: propUserData, userRepos: propUserRepos }) => {
   return (
     <div className='main-container'>
       <div className='top-left'>
-        <ProfileInfo userData={userData}/>
+        <ProfileInfo userData={userData} propUserData={propUserData} />
       </div>
       <div className='top-right'>
         <QuickFacts userRepos={userRepos}/>
