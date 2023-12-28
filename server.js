@@ -17,10 +17,10 @@ var app = express()
 app.use(cors());
 app.use(bodyParser.json())
 
-
 // Code being passed from the frontend
 app.get('/getAccessToken', async function (req, res) {
     req.query.code;
+    console.log("TOKEN: " + req.query.code)
     const params = "?client_id=" + CLIENT_ID + "&client_secret=" + CLIENT_SECRET + "&code=" + req.query.code;
 
     await fetch("https://github.com/login/oauth/access_token" + params, {
@@ -29,6 +29,7 @@ app.get('/getAccessToken', async function (req, res) {
             "Accept": "application/json"
         }
     }).then((response) => {
+        console.log(response)
         return response.json();
     }).then((data) => {
         console.log(data)
