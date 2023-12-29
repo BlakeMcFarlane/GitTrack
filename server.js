@@ -54,6 +54,22 @@ app.get('/getUserData', async function(req, res) {
     })
 })
 
+// getSearchUserData
+app.get('/getSearchUserData', async function(req, res) {
+    const username = req.query.username;
+    const authHeader = req.get("Authorization");
+
+    await fetch(`https://api.github.com/users/${username}`, {
+        method: "GET",
+        headers: {
+            "Authorization": authHeader
+        }
+    }).then((response) => {
+        return response.json()
+    }).then((data) => {
+        res.json(data)
+    })
+})
 
 
 // getRepoData
@@ -105,6 +121,7 @@ app.get('/getRepoData', async function(req, res) {
 
         // Send combined data
         res.json(repoData);
+        
     } catch (error) {
         console.error(error);
         res.status(500).send('An error occurred while fetching repository data');

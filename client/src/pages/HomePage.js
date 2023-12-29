@@ -95,7 +95,11 @@ const HomePage = ({ searchUserData, searchUserRepos }) => {
         <Badges />
       </div>
       <div className='bottom-left'>
-        <Languages userRepos={userRepos} />
+      { searchUserRepos ? (
+          <Languages userRepos={ searchUserRepos } />
+        ) : (
+          <Languages userRepos={ userRepos } />
+        )}
       </div>
       <div className='bottom-right'>
         <Leaderboard />

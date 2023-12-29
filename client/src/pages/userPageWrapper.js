@@ -11,10 +11,18 @@ const UserPageWrapper = (props) => {
 
     const handleSearch = async (username) => {
         try {
-            const userResponse = await fetch(`https://api.github.com/users/${username}`);
-            const userData = await userResponse.json();
-            setUserData(userData);
-            console.log(userData)
+            const userResponse = await fetch(`http://localhost:4000/getSearchUserData?username=${username}`, {
+                method: "GET",
+                headers: {
+                    "Authorization": localStorage.getItem("accessToken")
+                }
+            });
+
+            if (!userResponse.ok)
+                throw new Error('Failed to fetch user data');
+            const data1 = await userResponse.json()
+                setUserData(data1)
+
 
             const response = await fetch(`http://localhost:4000/getRepoData?username=${username}`, {
                 method: "GET",
@@ -24,7 +32,7 @@ const UserPageWrapper = (props) => {
             if (!response.ok) 
                 throw new Error('Failed to fetch repository data');
             const data = await response.json();
-            setUserRepos(data);
+                setUserRepos(data);
             
         } catch (error) {
             console.error("Failed to fetch user data:", error);

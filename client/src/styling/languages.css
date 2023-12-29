@@ -28,23 +28,59 @@
     margin-top: 10px;
     margin-left: 40px;
 }
-.language-bar {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.bar{
-    width:90%;
-    height:8px;
-    background-color: aqua;
-}
 
 .language {
-    color:#fafbfc;
+    counter-reset: language-counter; /* Create a counter */
+    list-style: none; /* Remove default list item numbers */
+    padding-left: 0; /* Remove default padding */
+    color: #fafbfc;
     font-family: 'Bebas Neue', sans-serif;
     font-size: 16pt;
 }
 
-.language li {
-    padding-bottom: 2px;
+.language-item {
+    counter-increment: language-counter; /* Increment the counter for each item */
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.language-item::before {
+    content: counter(language-counter) ". "; /* Display the counter */
+    margin-right: 10px; /* Space between the number and the color block */
+    /* Additional styling as needed */
+}
+
+.language-color {
+    width: 6px; /* Or any size you prefer */
+    height: 16px; /* Or any size you prefer */
+    margin-right: 10px; /* Adds some space between the color block and the text */
+}
+
+.language-bar-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%; /* Take the full width of its parent */
+    margin-top: 5px; /* Optional: to give some space from the above elements */
+}
+.language-bar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+}
+
+.language-bar-item {
+    height: 8px;
+    background-color: #4caf50; /* or any color of your choice */
+    display: flex;
+    align-items: center;
+}
+
+.language-label {
+    color: white;
+    margin-left: 5px;
+    font-size: 14px;
+    font-family: 'Bebas Neue', sans-serif;
 }
