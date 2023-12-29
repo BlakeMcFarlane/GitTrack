@@ -7,13 +7,12 @@ import Leaderboard from '../components/Leaderboard'
 import '../styling/home-page.css'
 
 
-const HomePage = ({ propUserData, propUserRepos }) => {
+const HomePage = ({ searchUserData, searchUserRepos }) => {
   const [rerender, setRerender] = useState(false)
   const [userData, setUserData] = useState({})
   const [userRepos, setUserRepos] = useState([])
 
   useEffect(() => {
-    console.log("PROP: " + propUserData)
     const queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString)
     const codeParam = urlParams.get('code')
@@ -81,17 +80,17 @@ const HomePage = ({ propUserData, propUserRepos }) => {
   return (
     <div className='main-container'>
       <div className='top-left'>
-        {propUserData ? (
-          <ProfileInfo userData={  propUserData } />
+        { searchUserData ? (
+          <ProfileInfo userData={ searchUserData } />
         ) : (
           <ProfileInfo userData={ userData } />
         )}
       </div>
       <div className='top-right'>
-        {propUserData ? (
-          <QuickFacts userRepos={ propUserRepos }/>
+        { searchUserRepos ? (
+          <QuickFacts userRepos={ searchUserRepos }/>
         ) : (
-          <QuickFacts userRepos={userRepos}/>
+          <QuickFacts userRepos={ userRepos }/>
         )}
         <Badges />
       </div>

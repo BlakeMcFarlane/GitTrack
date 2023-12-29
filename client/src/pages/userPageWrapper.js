@@ -5,8 +5,8 @@ import { useState, useEffect } from 'react'
 
 const UserPageWrapper = (props) => {
 
-    const [userData, setUserData] = useState(null);
-    const [userRepos, setUserRepos] = useState(null);
+    const [userData, setUserData] = useState(null);         // JSON     {}
+    const [userRepos, setUserRepos] = useState(null);       // Array    []
 
 
     const handleSearch = async (username) => {
@@ -16,9 +16,15 @@ const UserPageWrapper = (props) => {
             setUserData(userData);
             console.log(userData)
 
-            const reposResponse = await fetch(`https://api.github.com/users/${username}/repos`);
-            const reposData = await reposResponse.json();
-            setUserRepos(reposData);
+            const response = await fetch(`http://localhost:4000/getRepoData?username=${username}`, {
+                method: "GET",
+                headers: { "Authorization": "Bearer " + localStorage.getItem("accessToken") }
+            });
+
+            if (!response.ok) 
+                throw new Error('Failed to fetch repository data');
+            const data = await response.json();
+            setUserRepos(data);
             
         } catch (error) {
             console.error("Failed to fetch user data:", error);
@@ -26,8 +32,8 @@ const UserPageWrapper = (props) => {
     };
     return (
         <div>
-        <Navbar onSearch={handleSearch}/>
-        <HomePage propUserData={ userData } propUserRepos={ userRepos } />
+            <Navbar onSearch={ handleSearch }/>
+            <HomePage searchUserData={ userData } searchUserRepos={ userRepos } />
         </div>
     );
     };
