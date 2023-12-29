@@ -11,6 +11,7 @@ const HomePage = ({ searchUserData, searchUserRepos }) => {
   const [rerender, setRerender] = useState(false)
   const [userData, setUserData] = useState({})
   const [userRepos, setUserRepos] = useState([])
+  const [userChart, setUserChart] = useState()
 
   useEffect(() => {
     const queryString = window.location.search;
@@ -40,7 +41,6 @@ const HomePage = ({ searchUserData, searchUserRepos }) => {
         const userData = await getUserData();
         if (userData.login) {
           await getRepoData(userData.login)
-  
         }
       } catch (error) {
         console.error("Error fetching data:", error);
@@ -48,8 +48,14 @@ const HomePage = ({ searchUserData, searchUserRepos }) => {
     };
 
     fetchData();
+    getUserChart(userData.login)
   }, []);
+  
 
+  const getUserChart = async (username) => {
+    const chartURL = <img src={`https://ghchart.rshah.org/${username}`} alt="Name Your Github chart" />
+    setUserChart(chartURL)
+  }
 
 
   const getUserData = async () => {
@@ -92,7 +98,11 @@ const HomePage = ({ searchUserData, searchUserRepos }) => {
         ) : (
           <QuickFacts userRepos={ userRepos }/>
         )}
-        <Badges />
+        { searchUserData ? (
+          <Badges userData={ searchUserData }/>
+        ) : (
+          <Badges userData={ userData }/>
+        )}
       </div>
       <div className='bottom-left'>
       { searchUserRepos ? (

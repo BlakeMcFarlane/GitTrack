@@ -1,0 +1,114 @@
+.lang-container {
+    background-color: #2b3137;
+    height:100%;
+    width:100%;
+    padding-left: 10px;
+    border-radius: 10px;
+    box-shadow: inset -1px -1px 7px #000000bb;
+}
+.header {
+    height:18%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-family: 'Bebas Neue', sans-serif;
+    margin-left: 10px;
+    align-items: center;
+
+}
+.header h1 {
+    color:aliceblue
+}
+.ratio-container {
+    height:100%;
+    width:30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.ratio {
+    height:80%;
+    width:80%;
+    border-radius: 8px;
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    color:rgb(105, 104, 104);
+    font-size: 8pt;
+    
+}
+.ratio p {
+    color:rgb(105, 104, 104);
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 24pt;
+
+}
+
+
+.body {
+    height:50%;
+}
+
+
+.lang-body {
+    height:50%
+}
+
+
+.repos {
+    height:30%;
+    display: flex;
+    justify-content: center;
+
+}
+.repo {
+    height:90%;
+    width:85%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.repo p {
+    margin: 0;
+    padding:0;
+    font-family: 'Roboto Mono', monospace;
+    color:rgba(240, 248, 255, 0.74);
+    font-size: 10pt;
+
+}
+.top-repo {
+    background-color: rgb(29, 29, 29);
+    width:70%;
+    height:80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Roboto Mono', monospace;
+}
+.top-repo a{
+    color: inherit; /* Makes the text color the same as the parent element */
+    text-decoration: none; /* Removes the underline */
+    font-weight: normal; /* Resets bold styling, if any */
+    color: inherit; /* Makes the text color the same as the parent element */
+    text-decoration: none; /* Removes the underline */
+    font-weight: normal; /* Resets bold styling, if any */
+}
+.repo-item {
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+    
+}
+
+
+
+.git-logo {
+    width: 20px;
+    padding: 0;
+    margin:0;
+    padding-right: 10px;
+}

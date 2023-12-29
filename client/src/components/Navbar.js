@@ -26,8 +26,8 @@ const Navbar = ({ onSearch }) => {
             onChange={handleInputChange}
             placeholder="search user"
           />
-          <button type='submit' >
-            <p>submit</p>
+          <button type='submit' className='nav-button'>
+            <p>GO</p>
           </button>
         </form>
       </div>

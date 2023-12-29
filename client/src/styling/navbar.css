@@ -6,7 +6,7 @@
 }
 
 .nav-items {
-    width:80%;
+    width:70%;
     display: flex;
     align-items: center;
     justify-content: flex-end;
@@ -14,6 +14,9 @@
 
 .search-user {
     position: 0;
+    width: 40%;
+    display: flex;
+    justify-content: space-between;
 }
 
 .nav-input {
@@ -25,9 +28,21 @@
     border-radius: 10px;
     font-size: 15pt;
     padding-left: 20px;
-    color: #151618
+    color: #000000
 }
 
 .nav-input:focus {
     outline: 1px solid #2dba4e;
+}
+
+.nav-button {
+    height: 30px;
+    border: none;            /* Removes the border */
+    padding: 0;              /* Removes padding */
+    margin: 0;               /* Removes margin */
+    cursor: pointer;         /* Keeps the cursor as a pointer to indicate it's clickable */
+    border-radius: 7px;
+    width:35px;
+    background-color: #a1a1a1;
+    font-family: 'Roboto Mono', monospace;
 }

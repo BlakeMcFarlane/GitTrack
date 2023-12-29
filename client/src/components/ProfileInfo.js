@@ -3,8 +3,23 @@ import '../styling/profile-info.css'
 
 const ProfileInfo = ({ userData, propUserData }) => {
 
+    const now = new Date();
+    const creationDate = new Date(userData.created_at); // Parse the creation date
 
+    // Calculate difference in years
+    let years = now.getFullYear() - creationDate.getFullYear();
+    // Adjust for month and day
+    creationDate.setFullYear(now.getFullYear());
+    if (now < creationDate) {
+        years--;
+        creationDate.setFullYear(creationDate.getFullYear() - 1);
+    }
 
+    // Calculate the remaining months
+    const months = now.getMonth() - creationDate.getMonth();
+
+    // Format the account age
+    const accountAge = `${years} year${years !== 1 ? 's' : ''} and ${months} month${months !== 1 ? 's' : ''}`;
 
     return (
         <div className='profile-container'>
@@ -26,11 +41,13 @@ const ProfileInfo = ({ userData, propUserData }) => {
                     </div>
                     <div className='stat'>
                         <p>account Age</p>
-                        <p id='value'>-</p>
-                    </div>
-                    <div className='stat'>
-                        <p>bio</p>
-                        <p id='value'>{userData.bio}</p>
+                        <p id='value' style={{ fontSize: "12pt" }}>{accountAge}</p>
+                    </div> 
+                    <div className='stat-bio'>
+                        <p className='bio-key'>bio</p>
+                        <div className='bio'>
+                            <p>{userData.bio}</p>
+                        </div>
                     </div>
                 </div>
             </div>
